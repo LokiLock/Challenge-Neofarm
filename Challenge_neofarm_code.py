@@ -3,13 +3,14 @@ import matplotlib.pyplot as plt
 from copy import copy, deepcopy
 import json
 
-Plan=str(input("Entrer le plan dans lequel se trouve le robot maraîcher. Exemple: ZX, XZ, YZ, etc.XZ \n"))
-Axe=str(input("\nEntrer l'Axe sur lequel se trouve le centre du cercle. Exemple: X, Y ou Z \n"))
+Plan=str(input("Entrer le plan dans lequel se trouve le robot maraîcher. Exemple: XY, ZX, XZ, YZ, etc. \n")).upper()
+Axe=str(input("\nEntrer l'Axe sur lequel se trouve le centre du cercle. Exemple: X, Y ou Z \n")).upper()
 r=float(input("\nEntrer la valeur du rayon, en précisant son signe. Exemple:-15, 3 etc. \n")) #signe définit ordonnée y
 θ=abs(float(input("\nEntrer la valeur de l'angle θ (en degrés) à parcourir Exemple: 360, 125 etc. \n")))
-sens=float(input("\nPréciser le sens de parcours du cercle: -1 pour le sens horaire, 1 pour antihoraire \n")) #-1 antitrigo = horaire, 1=trigo (horaire)
+sens=float(input("\nPréciser le sens de parcours du cercle: 1 pour le sens horaire, -1 pour antihoraire \n")) #-1 antitrigo = horaire, 1=trigo (horaire)
 NbPoints =int(input("\nPréciser le nombre de points pour discréditer le cercle: (50 est le maximum) \n"))
 
+sens=-sens #pour travailler en norme trigonométrique
 # Plan='YZ'
 # Axe='Y'
 # r=-15
